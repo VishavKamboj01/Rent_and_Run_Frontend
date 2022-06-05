@@ -5,9 +5,10 @@ import { NavLink } from "react-router-dom";
 export const NavbarContainer = styled.div`
   width: 100%;
   height: 60px;
-  background-color: ${colors.primary};
+  background: rgba(0, 0, 0, 0.7);
   position: fixed;
   top: 0;
+  z-index: 1;
 `;
 
 export const LinksContainer = styled.div`
@@ -19,11 +20,15 @@ export const LinksContainer = styled.div`
 `;
 
 export const StyledNavLink = styled(NavLink)`
-  color: ${colors.gray};
+  color: lightgray;
   text-decoration: none;
   margin: 10px;
   font-size: 1.2rem;
   &.active {
+    color: white;
+  }
+
+  :hover {
     color: white;
   }
 `;

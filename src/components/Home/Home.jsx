@@ -1,12 +1,37 @@
-import React from "react";
-import { HomeContainer } from "./HomeStyles";
+import React, { useEffect, useState } from "react";
+import {
+  ContentContainer,
+  HomeContainer,
+  NewArrivalSection,
+  Title,
+} from "./HomeStyles";
+import { moviesDataWide, animeDataWide } from "../../service/http";
+import ContentCard from "./Content/ContentCard";
+import { Carousel } from "react-bootstrap";
+import Slider from "./Content/Slider/Slider";
 
-export default function Home() {
+export default function Home({ type }) {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    //Get the data.
+    if (type === "movies") setData(moviesDataWide);
+    else setData(animeDataWide);
+  }, [type]);
+
   return (
     <HomeContainer>
-      <h1 style={{ color: "white", marginLeft: 280, marginTop: 60 }}>
-        Home Component
-      </h1>
+      <ContentContainer>
+        <Carousel variant="dark" touch={true} slide={true} interval={2000}>
+          {data.map((item) => (
+            <Carousel.Item>
+              <ContentCard image={item.image} title={item.title} />
+            </Carousel.Item>
+          ))}
+        </Carousel>
+        <NewArrivalSection>
+          <Slider items={data} />
+        </NewArrivalSection>
+      </ContentContainer>
     </HomeContainer>
   );
 }
