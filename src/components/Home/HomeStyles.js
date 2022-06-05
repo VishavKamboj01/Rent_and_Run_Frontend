@@ -18,7 +18,7 @@ export const ContentContainer = styled.div`
   background: ${colors.primary};
 `;
 
-export const NewArrivalSection = styled.div`
+export const Section = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

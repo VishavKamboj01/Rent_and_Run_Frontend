@@ -59,27 +59,43 @@ export const moviesDataWide = [
     image: hellboy,
     description: "Something about the movie.",
   },
-];
 
-export const animeDataPortrait = [
   {
-    id: "2",
-    title: "Bleech",
-    image: bleech,
-    description: "Something about the anime.",
+    id: "1",
+    title: "Alladin",
+    image: alladin,
+    description: "Something about the movie.",
   },
   {
-    id: "5",
-    title: "Spider Man",
-    image: spider,
+    id: "3",
+    title: "Godzilla",
+    image: godzilla,
+    description: "Something about the movie.",
+  },
+  {
+    id: "4",
+    title: "Hellboy",
+    image: hellboy,
     description: "Something about the movie.",
   },
 
   {
+    id: "1",
+    title: "Alladin",
+    image: alladin,
+    description: "Something about the movie.",
+  },
+  {
+    id: "3",
+    title: "Godzilla",
+    image: godzilla,
+    description: "Something about the movie.",
+  },
+  {
     id: "4",
-    title: "Free",
-    image: free,
-    description: "Something about the anime.",
+    title: "Hellboy",
+    image: hellboy,
+    description: "Something about the movie.",
   },
 ];
 

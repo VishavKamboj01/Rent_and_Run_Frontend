@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  ContentContainer,
-  HomeContainer,
-  NewArrivalSection,
-  Title,
-} from "./HomeStyles";
+import { ContentContainer, HomeContainer, Section, Title } from "./HomeStyles";
 import { moviesDataWide, animeDataWide } from "../../service/http";
 import ContentCard from "./Content/ContentCard";
 import { Carousel } from "react-bootstrap";
@@ -28,9 +23,12 @@ export default function Home({ type }) {
             </Carousel.Item>
           ))}
         </Carousel>
-        <NewArrivalSection>
-          <Slider items={data} />
-        </NewArrivalSection>
+        <Section>
+          <Slider items={data} title="New Arrivals" />
+        </Section>
+        <Section>
+          <Slider items={data} title="Trending Now" />
+        </Section>
       </ContentContainer>
     </HomeContainer>
   );

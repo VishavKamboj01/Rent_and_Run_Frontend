@@ -1,27 +1,47 @@
 import React from "react";
-import { BaseContainer, Card, SliderContainer, Title } from "./SliderStyles";
-import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  BaseContainer,
+  Card,
+  Image,
+  LeftArrowContainer,
+  RightArrowContainer,
+  SliderContainer,
+  Title,
+} from "./SliderStyles";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 // Import Swiper styles
+
 import "swiper/css";
 
-export default function Slider({ items }) {
+export default function Slider({ items, title }) {
+  let swiper = useSwiper();
+
   return (
     <BaseContainer>
-      <Title>New Arrivals</Title>
+      <Title>{title}</Title>
       <SliderContainer>
+        <LeftArrowContainer>
+          <FaAngleLeft size={70} color="white" style={{ opacity: 0.6 }} />
+        </LeftArrowContainer>
         <Swiper
-          spaceBetween={50}
-          slidesPerView={6}
+          spaceBetween={10}
+          slidesPerView={5}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
         >
           {items.map((item) => (
-            <SwiperSlide style={{ width: 300, height: 150 }}>
-              <Card src={item.image} />
+            <SwiperSlide key={item.image}>
+              <Card>
+                <Image src={item.image} />
+              </Card>
             </SwiperSlide>
           ))}
         </Swiper>
+        <RightArrowContainer onClick={() => swiper.slideNext()}>
+          <FaAngleRight size={70} color="white" style={{ opacity: 0.6 }} />
+        </RightArrowContainer>
       </SliderContainer>
     </BaseContainer>
   );
