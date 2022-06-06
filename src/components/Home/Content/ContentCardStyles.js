@@ -20,7 +20,7 @@ export const MovieImage = styled.img`
 export const BottomContainer = styled.div`
   display: flex;
   width: 100%;
-  height: 200px;
+  height: 300px;
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 1) 0%,
@@ -29,6 +29,7 @@ export const BottomContainer = styled.div`
   align-items: center;
   position: absolute;
   bottom: 0;
+  padding-bottom: 50px;
 `;
 
 export const InfoContainer = styled.div`
@@ -40,9 +41,10 @@ export const InfoContainer = styled.div`
 `;
 
 export const Title = styled.h6`
-  font-size: 4rem;
+  font-size: 5rem;
   color: white;
   margin: 0;
+  margin-bottom: 40px;
 `;
 
 export const Year = styled.p`
@@ -87,10 +89,9 @@ export const BuyNowButton = styled.button`
   border: 0;
   opacity: 0.8;
   margin-right: 20px;
-
+  transition: 0.5s ease-in-out;
   :hover {
     opacity: 0.9;
-    transition: 0.5s ease-in-out;
   }
 `;
 
@@ -102,9 +103,8 @@ export const RentNowButton = styled.button`
   color: black;
   border-radius: 20px;
   border: 0;
-
+  transition: 0.5s ease-in-out;
   :hover {
     background: rgba(255, 255, 255, 0.9);
-    transition: 0.5s ease-in-out;
   }
 `;

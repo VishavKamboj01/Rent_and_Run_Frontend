@@ -15,7 +15,7 @@ import {
 } from "./ContentCardStyles";
 import imdb from "../../../images/icons/imdb.png";
 
-export default function ContentCard({ image, title }) {
+export default function ContentCard({ image, title, rating }) {
   return (
     <Card>
       <MovieImage src={image} />
@@ -25,7 +25,7 @@ export default function ContentCard({ image, title }) {
           <Year>2021</Year>
           <RatingContainer>
             <ImdbIcon src={imdb} />
-            <RatingText>7.9 rating</RatingText>
+            <RatingText>{rating} rating</RatingText>
           </RatingContainer>
         </InfoContainer>
         <ButtonsContainer>

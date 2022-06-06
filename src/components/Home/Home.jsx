@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ContentContainer, HomeContainer, Section, Title } from "./HomeStyles";
-import { moviesDataWide, animeDataWide } from "../../service/http";
+import { moviesDataWide, animeDataWide, mixData } from "../../service/http";
 import ContentCard from "./Content/ContentCard";
 import { Carousel } from "react-bootstrap";
 import Slider from "./Content/Slider/Slider";
@@ -10,7 +10,8 @@ export default function Home({ type }) {
   useEffect(() => {
     //Get the data.
     if (type === "movies") setData(moviesDataWide);
-    else setData(animeDataWide);
+    else if (type === "anime") setData(animeDataWide);
+    else setData(mixData);
   }, [type]);
 
   return (
@@ -18,16 +19,31 @@ export default function Home({ type }) {
       <ContentContainer>
         <Carousel variant="dark" touch={true} slide={true} interval={2000}>
           {data.map((item) => (
-            <Carousel.Item>
-              <ContentCard image={item.image} title={item.title} />
+            <Carousel.Item key={item.id}>
+              <ContentCard
+                image={item.image}
+                title={item.title}
+                rating={item.rating}
+              />
             </Carousel.Item>
           ))}
         </Carousel>
         <Section>
-          <Slider items={data} title="New Arrivals" />
+          <Slider
+            items={type === "all" ? moviesDataWide : data}
+            title={type === "all" ? "Movies" : "New Arrivals"}
+            type={type}
+          />
         </Section>
         <Section>
-          <Slider items={data} title="Trending Now" />
+          <Slider
+            items={type === "all" ? animeDataWide : data}
+            title={type === "all" ? "Anime" : "Trending Now"}
+          />
+        </Section>
+
+        <Section>
+          <Slider items={data} title="Top Rated" />
         </Section>
       </ContentContainer>
     </HomeContainer>
