@@ -39,11 +39,12 @@ export default function Home({ type }) {
           <Slider
             items={type === "all" ? animeDataWide : data}
             title={type === "all" ? "Anime" : "Trending Now"}
+            type={type}
           />
         </Section>
 
         <Section>
-          <Slider items={data} title="Top Rated" />
+          <Slider items={data} title="Top Rated" type={type} />
         </Section>
       </ContentContainer>
     </HomeContainer>

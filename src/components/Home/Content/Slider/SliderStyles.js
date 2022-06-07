@@ -108,7 +108,7 @@ export const LeftArrowContainer = styled.div`
   );
   position: absolute;
   left: 0;
-  z-index: 10;
+  z-index: 2;
   transition: 0.5s ease;
 
   :hover {
@@ -134,7 +134,7 @@ export const RightArrowContainer = styled.div`
   display: flex;
   align-items: center;
   right: 5px;
-  z-index: 1;
+  z-index: 2;
 
   :hover {
     background: linear-gradient(

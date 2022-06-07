@@ -40,7 +40,6 @@ export default function Slider({ items, title, type }) {
   }, []);
 
   const handleInfoClick = (item) => {
-    console.log(item);
     navigate("/" + type + "/" + item.id, { state: item });
   };
 
