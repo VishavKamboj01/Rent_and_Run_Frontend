@@ -5,13 +5,15 @@ import "./App.css";
 import Home from "./components/Home/Home";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Info from "./components/Info/Info";
+import Form from "./components/Login/Form";
 
 function App() {
   return (
     <Fragment>
       <Router>
-        <Navbar />
         <Routes>
+          <Route path="/login" element={<Form type="login" />} />
+          <Route path="/register" element={<Form type="register" />} />
           <Route path="/anime" element={<Home type="anime" />} />
           <Route path="/series" element={<Home type="series" />} />
           <Route path="/movies" element={<Home type="movies" />} />

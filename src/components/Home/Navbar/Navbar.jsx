@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 
 import {
   Icon,
@@ -11,8 +12,18 @@ import {
   LoginButton,
   RegisterButton,
 } from "./NavbarStyles";
-import R from "../../../images/icons/r.png";
+
 export default function Navbar() {
+  const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    navigate("/login");
+  };
+
+  const handleRegisterClick = () => {
+    navigate("/register");
+  };
+
   return (
     <NavbarContainer>
       <IconAndLinksContainer>
@@ -27,8 +38,10 @@ export default function Navbar() {
           <StyledNavLink to="/anime">Anime</StyledNavLink>
         </LinksContainer>
         <div>
-          <LoginButton>LOGIN</LoginButton>
-          <RegisterButton>REGISTER</RegisterButton>
+          <LoginButton onClick={handleLoginClick}>LOGIN</LoginButton>
+          <RegisterButton onClick={handleRegisterClick}>
+            REGISTER
+          </RegisterButton>
         </div>
       </IconAndLinksContainer>
     </NavbarContainer>

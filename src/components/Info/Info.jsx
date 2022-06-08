@@ -22,12 +22,13 @@ import {
 } from "./InfoStyles";
 import ReviewComponent from "./ReviewComponent";
 import Photos from "./Photos";
-
+import Navbar from "../Home/Navbar/Navbar";
 export default function Info() {
   const location = useLocation();
   const { title, image, rating } = location.state;
   return (
     <BaseContainer>
+      <Navbar />
       <ContentCard title={title} image={image} rating={rating} />;
       <InfoSection>
         <MovieInfoBaseContainer style={{ marginTop: 100 }}>

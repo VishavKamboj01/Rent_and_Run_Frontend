@@ -4,7 +4,7 @@ import { moviesDataWide, animeDataWide, mixData } from "../../service/http";
 import ContentCard from "./Content/ContentCard";
 import { Carousel } from "react-bootstrap";
 import Slider from "./Content/Slider/Slider";
-
+import Navbar from "./Navbar/Navbar";
 export default function Home({ type }) {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -16,6 +16,8 @@ export default function Home({ type }) {
 
   return (
     <HomeContainer>
+      <Navbar />
+
       <ContentContainer>
         <Carousel variant="dark" touch={true} slide={true} interval={2000}>
           {data.map((item) => (
