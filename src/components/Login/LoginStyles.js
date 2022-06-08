@@ -20,16 +20,20 @@ export const FormContainer = styled.div`
 
 export const TextFieldContainer = styled.div`
   display: flex;
-  width: 45%;
+  width: 550px;
   height: 60px;
   border-radius: 40px;
-  box-shadow: 0 5px 20px #cfd9df;
+  box-shadow: 0 0px 40px #cfd9df;
   border: 0;
   transition: 0.4s ease;
   align-items: center;
   justify-content: space-between;
   position: relative;
   margin-bottom: 30px;
+
+  :hover {
+    transform: scale(1.05);
+  }
 `;
 
 export const TextField = styled.input`
@@ -46,7 +50,7 @@ export const TextField = styled.input`
   left: 0;
 
   :focus {
-    box-shadow: 0 10px 30px #cfd9df;
+    box-shadow: 0 10px 50px #cfd9df;
   }
 `;
 
@@ -88,7 +92,7 @@ export const Text = styled.p`
 `;
 
 export const Button = styled.div`
-  width: 20%;
+  width: 250px;
   height: 45px;
   display: flex;
   align-items: center;
@@ -98,6 +102,7 @@ export const Button = styled.div`
   font-weight: bold;
   margin-top: 40px;
   cursor: pointer;
+  box-shadow: 0 10px 10px #cfd9df;
 
   background-image: linear-gradient(
     90deg,
@@ -105,4 +110,33 @@ export const Button = styled.div`
     #ff2525 30%,
     #990000 100%
   );
+
+  transition: 0.5s ease;
+  :hover {
+    transform: scale(1.1);
+  }
+`;
+
+export const Error = styled.div`
+  padding: 1px 10px;
+  position: absolute;
+  top: -40px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 15px;
+  transition: 0.5s ease;
+  z-index: 10;
+
+  ::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.8);
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 50% 100%);
+  }
 `;
