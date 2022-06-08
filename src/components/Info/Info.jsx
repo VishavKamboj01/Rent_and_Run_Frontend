@@ -20,6 +20,8 @@ import {
   PlayIcon,
   Trailers,
 } from "./InfoStyles";
+import ReviewComponent from "./ReviewComponent";
+import Photos from "./Photos";
 
 export default function Info() {
   const location = useLocation();
@@ -28,7 +30,7 @@ export default function Info() {
     <BaseContainer>
       <ContentCard title={title} image={image} rating={rating} />;
       <InfoSection>
-        <MovieInfoBaseContainer>
+        <MovieInfoBaseContainer style={{ marginTop: 100 }}>
           <ContentInfoContainer>
             <ContentTitle>MOVIE INFO</ContentTitle>
             <ContentInfo>
@@ -77,6 +79,10 @@ export default function Info() {
             <BiChevronRight size={40} color="white" style={{ marginTop: 50 }} />
           </ContentInfoContainer>
         </TrailerBaseContainer>
+        <MovieInfoBaseContainer>
+          <ReviewComponent />
+        </MovieInfoBaseContainer>
+        <Photos image={image} />
       </InfoSection>
     </BaseContainer>
   );

@@ -8,6 +8,8 @@ import {
   NavbarContainer,
   StyledNavLink,
   Title,
+  LoginButton,
+  RegisterButton,
 } from "./NavbarStyles";
 import R from "../../../images/icons/r.png";
 export default function Navbar() {
@@ -24,6 +26,10 @@ export default function Navbar() {
           <StyledNavLink to="/series">Series</StyledNavLink>
           <StyledNavLink to="/anime">Anime</StyledNavLink>
         </LinksContainer>
+        <div>
+          <LoginButton>LOGIN</LoginButton>
+          <RegisterButton>REGISTER</RegisterButton>
+        </div>
       </IconAndLinksContainer>
     </NavbarContainer>
   );

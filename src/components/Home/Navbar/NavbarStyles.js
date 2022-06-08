@@ -18,6 +18,7 @@ export const IconAndLinksContainer = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-around;
 `;
 
 export const LinksContainer = styled.div`
@@ -67,4 +68,28 @@ export const Title = styled.p`
   margin-right: 50px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+`;
+
+export const LoginButton = styled.button`
+  width: 150px;
+  height: 40px;
+  border-radius: 30px;
+  background-color: white;
+  opacity: 0.7;
+  border: 0;
+  margin: 0;
+  margin-right: 20px;
+  font-weight: bold;
+`;
+
+export const RegisterButton = styled.button`
+  width: 150px;
+  height: 40px;
+  color: white;
+  border-radius: 30px;
+  background-color: red;
+  opacity: 0.6;
+  font-weight: bold;
+  border: 0;
+  margin: 0;
 `;

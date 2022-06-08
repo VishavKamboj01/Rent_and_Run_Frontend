@@ -19,9 +19,9 @@ export const InfoSection = styled.div`
 export const MovieInfoBaseContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 100px;
   width: 100%;
-  height: 450px;
+  height: 100%;
+  padding: 100px 0;
   background-color: rgba(128, 128, 128, 0.15);
   box-shadow: 0 0 70px #212121;
 `;
@@ -41,7 +41,7 @@ export const ContentTitle = styled.h5`
   height: 45px;
   ::after {
     content: "";
-    width: 160px;
+    width: 140px;
     height: 1px;
     background-color: red;
     position: absolute;
@@ -120,16 +120,19 @@ export const Value = styled.p`
 
 export const TrailerBaseContainer = styled.div`
   width: 100%;
-  height: 450px;
+  padding: 100px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-grow: 1;
 `;
 
 export const Trailers = styled.div`
   display: flex;
   position: relative;
+  margin-bottom: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
   ::after {
     content: "";
     width: 180px;
