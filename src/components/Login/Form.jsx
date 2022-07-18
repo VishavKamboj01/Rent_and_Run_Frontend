@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import {
   BaseContainer,
+  BottomText,
   Button,
   Content,
   Error,
   FormContainer,
+  LoginFooter,
+  LoginText,
   SideBanner,
   Text,
   TextField,
@@ -19,6 +22,7 @@ import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import Joi from "joi";
 
 import colors from "../../utils/colors";
+import { login } from "../../service/backend";
 export default function Form({ type }) {
   const [eyeClick, setEyeClick] = useState(false);
 
@@ -106,8 +110,17 @@ export default function Form({ type }) {
     }
   };
 
-  const sendLoginRequest = () => {
-    console.log("Sending Login request...");
+  const sendLoginRequest = async () => {
+    const user = {
+      email: email.value,
+      password: password.value,
+    };
+    try {
+      const result = await login(user);
+      console.log(result);
+    } catch (error) {
+      console.log(error.response.data);
+    }
   };
 
   const sendRegisterRequest = () => {
@@ -174,6 +187,13 @@ export default function Form({ type }) {
             />
           )}
         </TextFieldContainer>
+        {type === "register" && (
+          <LoginFooter>
+            <BottomText>Already have an account? </BottomText>
+            <LoginText>Login Now</LoginText>
+          </LoginFooter>
+        )}
+
         <Button onClick={handleButtonClick}>
           {type === "register" ? "CREATE ACCOUNT" : " LOGIN"}
         </Button>

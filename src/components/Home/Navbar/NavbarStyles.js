@@ -4,13 +4,13 @@ import { NavLink } from "react-router-dom";
 
 export const NavbarContainer = styled.div`
   width: 100%;
-  height: 60px;
   background: rgba(0, 0, 0, 0.7);
   position: fixed;
   top: 0;
-  z-index: 10;
+  z-index: 5;
   display: flex;
   flex-direction: column;
+  padding: 5px 0;
 `;
 
 export const IconAndLinksContainer = styled.div`
@@ -18,7 +18,7 @@ export const IconAndLinksContainer = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 `;
 
 export const LinksContainer = styled.div`
@@ -43,9 +43,11 @@ export const StyledNavLink = styled(NavLink)`
 
 export const IconContainer = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 5px;
+  margin-left: 20px;
 `;
 
 export const Icon = styled.img`
@@ -65,7 +67,7 @@ export const Title = styled.p`
     rgba(255, 0, 0, 1) 0%,
     rgba(255, 255, 255, 1) 80%
   );
-  margin-right: 50px;
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;
@@ -80,6 +82,11 @@ export const LoginButton = styled.button`
   margin: 0;
   margin-right: 20px;
   font-weight: bold;
+  transition: 0.5s ease;
+
+  :hover {
+    opacity: 1;
+  }
 `;
 
 export const RegisterButton = styled.button`
@@ -92,4 +99,9 @@ export const RegisterButton = styled.button`
   font-weight: bold;
   border: 0;
   margin: 0;
+  transition: 0.5s ease;
+
+  :hover {
+    opacity: 0.9;
+  }
 `;

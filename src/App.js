@@ -14,13 +14,13 @@ function App() {
         <Routes>
           <Route path="/login" element={<Form type="login" />} />
           <Route path="/register" element={<Form type="register" />} />
-          <Route path="/anime" element={<Home type="anime" />} />
-          <Route path="/series" element={<Home type="series" />} />
-          <Route path="/movies" element={<Home type="movies" />} />
+          <Route path="/anime" element={<Home type="Anime" />} />
+          <Route path="/series" element={<Home type="Series" />} />
+          <Route path="/movies" element={<Home type="Movies" />} />
 
-          <Route path="/anime/:id" element={<Info type="anime" />} />
-          <Route path="/series/:id" element={<Info type="series" />} />
-          <Route path="/movies/:id" element={<Info type="movies" />} />
+          <Route path="/anime/:id" element={<Info type="Anime" />} />
+          <Route path="/series/:id" element={<Info type="Series" />} />
+          <Route path="/movies/:id" element={<Info type="Movies" />} />
           <Route path="/all/:id" element={<Info type="all" />} />
 
           <Route index path="/" element={<Home type="all" />} />

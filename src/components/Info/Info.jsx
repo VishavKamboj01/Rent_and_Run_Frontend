@@ -26,9 +26,14 @@ import Navbar from "../Home/Navbar/Navbar";
 export default function Info() {
   const location = useLocation();
   const { title, image, rating } = location.state;
+
+  const handleMenuClick = () => {
+    console.log("Menu click info");
+  };
+
   return (
     <BaseContainer>
-      <Navbar />
+      <Navbar onMenuClick={handleMenuClick} type="all" />
       <ContentCard title={title} image={image} rating={rating} />;
       <InfoSection>
         <MovieInfoBaseContainer style={{ marginTop: 100 }}>

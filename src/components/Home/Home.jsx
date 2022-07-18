@@ -9,14 +9,26 @@ export default function Home({ type }) {
   const [data, setData] = useState([]);
   useEffect(() => {
     //Get the data.
-    if (type === "movies") setData(moviesDataWide);
-    else if (type === "anime") setData(animeDataWide);
+    if (type === "Movies") setData(moviesDataWide);
+    else if (type === "Anime") setData(animeDataWide);
     else setData(mixData);
   }, [type]);
 
+  const handleMenuClick = () => {
+    console.log("Menu clicked");
+  };
+
+  const handleMenuItemSelected = (item) => {
+    console.log(item.target.innerHTML);
+  };
+
   return (
     <HomeContainer>
-      <Navbar />
+      <Navbar
+        onMenuClick={handleMenuClick}
+        type={type}
+        onMenuItemSelected={handleMenuItemSelected}
+      />
 
       <ContentContainer>
         <Carousel variant="dark" touch={true} slide={true} interval={2000}>

@@ -91,6 +91,28 @@ export const Text = styled.p`
   opacity: 0.8;
 `;
 
+export const LoginFooter = styled.div`
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const BottomText = styled.p`
+  opacity: 0.8;
+  font-size: 1.3rem;
+  margin: 0;
+`;
+
+export const LoginText = styled.h5`
+  opacity: 0.8;
+  color: red;
+  text-decoration: underline;
+  margin: 0;
+  margin-left: 10px;
+  cursor: pointer;
+`;
+
 export const Button = styled.div`
   width: 250px;
   height: 45px;
